@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://GF_POBDetailBrowse.caption"
+        focusComponent="gF_POBDetailsTable">
+    <data readOnly="true">
+        <collection id="gF_POBDetailsDc"
+                    class="com.company.platform.entity.GF_POBDetail">
+            <fetchPlan extends="_base"/>
+            <loader id="gF_POBDetailsDl">
+                <query>
+                    <![CDATA[select e from GF_POBDetail e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="gF_POBDetailsTable" spacing="true">
+        <filter id="filter"
+                dataLoader="gF_POBDetailsDl">
+            <properties include=".*"/>
+        </filter>
+        <dataGrid id="gF_POBDetailsTable"
+                  width="100%"
+                  dataContainer="gF_POBDetailsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="exclude" type="exclude"/>
+                <action id="refresh" type="refresh"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column property="orgCode" id="orgCode"/>
+                <column property="pobNum" id="pobNum"/>
+                <column property="proBarcode" id="proBarcode"/>
+                <column property="productCode" id="productCode"/>
+                <column property="productName" id="productName"/>
+                <column property="proNum" id="proNum"/>
+                <column property="proWeight" id="proWeight"/>
+                <column property="warehouseName" id="warehouseName"/>
+                <column property="pobType" id="pobType"/>
+                <column property="pobTime" id="pobTime"/>
+                <column property="pobTeam" id="pobTeam"/>
+                <column property="deliveryMan" id="deliveryMan"/>
+                <column property="workDate" id="workDate"/>
+                <column property="exchangeTime" id="exchangeTime"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="gF_POBDetailsTable.create"/>
+                <button id="editBtn" action="gF_POBDetailsTable.edit"/>
+                <button id="excludeBtn" action="gF_POBDetailsTable.exclude"/>
+                <button id="refreshBtn" action="gF_POBDetailsTable.refresh"/>
+                <button id="removeBtn" action="gF_POBDetailsTable.remove"/>
+            </buttonsPanel>
+        </dataGrid>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

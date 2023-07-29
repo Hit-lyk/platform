@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://productDisassemblyProcessDefineBrowse.caption"
+        focusComponent="productDisassemblyProcessDefinesTable">
+    <data readOnly="true">
+        <collection id="productDisassemblyProcessDefinesDc"
+                    class="com.company.platform.entity.ProductDisassemblyProcessDefine">
+            <fetchPlan extends="_base">
+                <property name="parentNode" fetch="AUTO" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="productDisassemblyProcessDefinesDl">
+                <query>
+                    <![CDATA[select e from ProductDisassemblyProcessDefine e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="productDisassemblyProcessDefinesTable" spacing="true">
+        <filter id="filter"
+                dataLoader="productDisassemblyProcessDefinesDl">
+            <properties include=".*"/>
+        </filter>
+        <treeTable id="productDisassemblyProcessDefinesTable"
+                   width="100%"
+                   dataContainer="productDisassemblyProcessDefinesDc"
+                   hierarchyProperty="parentNode"
+                   multiselect="true">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="exclude" type="exclude"/>
+                <action id="refresh" type="refresh"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="equipmentClass"/>
+                <column id="productType"/>
+                <column id="workStatename"/>
+                <column id="disassemeblemNode"/>
+                <column id="parentNode"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="productDisassemblyProcessDefinesTable.create"/>
+                <button id="editBtn" action="productDisassemblyProcessDefinesTable.edit"/>
+                <button id="excludeBtn" action="productDisassemblyProcessDefinesTable.exclude"/>
+                <button id="refreshBtn" action="productDisassemblyProcessDefinesTable.refresh"/>
+                <button id="removeBtn" action="productDisassemblyProcessDefinesTable.remove"/>
+            </buttonsPanel>
+        </treeTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="platform">
+        <createTable tableName="GF_POB_DETAIL">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_GF_POB_DETAIL"/>
+            </column>
+            <column name="ORG_CODE" type="VARCHAR(255)"/>
+            <column name="POB_NUM" type="VARCHAR(255)"/>
+            <column name="PRO_BARCODE" type="VARCHAR(255)"/>
+            <column name="PRODUCT_CODE" type="VARCHAR(255)"/>
+            <column name="PRODUCT_NAME" type="VARCHAR(255)"/>
+            <column name="PRO_NUM" type="INT"/>
+            <column name="PRO_WEIGHT" type="DOUBLE"/>
+            <column name="WAREHOUSE_NAME" type="VARCHAR(255)"/>
+            <column name="POB_TYPE" type="VARCHAR(255)"/>
+            <column name="POB_TIME" type="DATETIME"/>
+            <column name="POB_TEAM" type="VARCHAR(255)"/>
+            <column name="DELIVERY_MAN" type="VARCHAR(255)"/>
+            <column name="WORK_DATE" type="DATETIME"/>
+            <column name="EXCHANGE_TIME" type="DATETIME"/>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="platform">
+        <createTable tableName="GF_POB_MAIN">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_GF_POB_MAIN"/>
+            </column>
+            <column name="ORG_CODE" type="VARCHAR(255)"/>
+            <column name="POB_NUM" type="VARCHAR(255)"/>
+            <column name="POB_TEAM" type="VARCHAR(255)"/>
+            <column name="POB_TIME" type="DATETIME"/>
+            <column name="PRODUCT_CODE" type="VARCHAR(255)"/>
+            <column name="PRODUCT_NAME" type="VARCHAR(255)"/>
+            <column name="DELIVERY_MAN" type="VARCHAR(255)"/>
+            <column name="PICK_MAN" type="VARCHAR(255)"/>
+            <column name="WORK_DATE" type="VARCHAR(255)"/>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="3" author="platform">
+        <createTable tableName="PRODUCT_DISASSEMBLY_PROCESS_DEFINE">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_PRODUCT_DISASSEMBLY_PROCESS_DEFINE"/>
+            </column>
+            <column name="EQUIPMENT_CLASS" type="VARCHAR(255)"/>
+            <column name="PRODUCT_TYPE" type="VARCHAR(255)"/>
+            <column name="WORK_STATENAME" type="VARCHAR(255)"/>
+            <column name="DISASSEMEBLEM_NODE" type="VARCHAR(255)"/>
+            <column name="PARENT_NODE_ID" type="UUID"/>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="4" author="platform">
+        <addForeignKeyConstraint baseColumnNames="PARENT_NODE_ID" baseTableName="PRODUCT_DISASSEMBLY_PROCESS_DEFINE"
+                                 constraintName="FK_PRODUCT_DISASSEMBLY_PROCESS_DEFINE_ON_PARENT_NODE"
+                                 referencedColumnNames="ID" referencedTableName="PRODUCT_DISASSEMBLY_PROCESS_DEFINE"/>
+    </changeSet>
+</databaseChangeLog>
