@@ -9,6 +9,7 @@
         <item screen="GF_POBMain.browse" caption="msg://com.company.platform.screen.gf_pobmain/GF_POBMainBrowse.menu"/>
         <item screen="ProductDisassemblyProcessDefine.browse"
               caption="msg://com.company.platform.screen.productdisassemblyprocessdefine/productDisassemblyProcessDefineBrowse.menu"/>
+        <item screen="GraphDemo" caption="msg://com.company.platform.screen.graphdemo/graphDemo.caption"/>
     </menu>
     <item screen="TestScreen" caption="msg://com.company.platform.screen.test/testScreen.caption"/>
 </menu-config>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://graphDemo.caption">
+    <layout>
+        <jsComponent id="neo4jhit"
+                     initFunctionName="javascript_component_neo4jd3">
+            <dependencies>
+                <dependency path="webjar://jquery:jquery.min.js"/>
+                <dependency path="vaadin://neo4jd3/js/d3.min.js"/>
+                <dependency path="vaadin://neo4jd3/js/neo4jd3.js"/>
+                <dependency path="vaadin://neo4jd3/css/bootstrap.min.css"/>
+                <dependency path="vaadin://neo4jd3/css/neo4jd3.css"/>
+                <dependency path="vaadin://neo4jd3/neo4jd3-connector.js"/>
+            </dependencies>
+        </jsComponent>
+    </layout>
+</window>
