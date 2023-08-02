@@ -1,12 +1,12 @@
 plugins {
-    id 'io.jmix' version '1.5.2'
+    id 'io.jmix' version '1.5.3'
     id 'java'
 }
 
 apply plugin: 'org.springframework.boot'
 
 jmix {
-    bomVersion = '1.5.2'
+    bomVersion = '1.5.3'
 }
 
 group = 'com.company'
@@ -46,6 +46,8 @@ dependencies {
     implementation 'io.jmix.dashboards:jmix-dashboards-starter'
     implementation 'io.jmix.dashboards:jmix-dashboards-ui-starter'
     implementation 'com.mysql:mysql-connector-j'
+    implementation 'com.alibaba:fastjson:1.2.76'
+    implementation 'org.neo4j.driver:neo4j-java-driver:5.11.0'
 }
 
 test {

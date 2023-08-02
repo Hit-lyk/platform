@@ -30,6 +30,7 @@
                     neo4jData: undefined,
                     neo4jDataUrl: undefined,
                     urlGraphData: undefined,
+                    graphData: undefined,
                     nodeOutlineFillColor: undefined,
                     nodeRadius: 25,
                     nodeType: 0,
@@ -557,6 +558,8 @@
                     loadNeo4jData(options.neo4jData);
                 } else if (options.neo4jDataUrl) {
                     loadNeo4jDataFromUrl(options.neo4jDataUrl);
+                } else if (options.graphData) {
+                    loadGraphData(options.graphData);
                 } else if (options.urlGraphData) {
                     loadGraphDataFromUrl(options.urlGraphData);
                 } else {
