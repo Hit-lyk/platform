@@ -2,42 +2,28 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://workingInstruction.caption">
     <layout>
-        <vbox css="border:1px solid #000">
-            <hbox height="150px">
-                <image css="border: 1px solid #000" align="MIDDLE_CENTER" height="100%">
+        <vbox stylename="wi-frame">
+            <hbox height="100px">
+                <image align="MIDDLE_CENTER" width="260" height="100%" stylename="wi-border-right-bottom">
                     <resource>
                         <classpath path="/images/haier-logo.jpg"/>
                     </resource>
                 </image>
-                <label value="&#20316;&#19994;&#25351;&#23548;&#20070;"
-                       align="MIDDLE_CENTER" css="font-size:30px"/>
+                <hbox width="800" height="100%" stylename="wi-border-right-bottom">
+                    <label align="MIDDLE_CENTER" value="&#20316;&#19994;&#25351;&#23548;&#20070;" stylename="wi-caption"/>
+                </hbox>
             </hbox>
             <hbox>
-                <image css="border: 1px solid #000">
-                    <resource>
-                        <classpath path="/images/haier-logo.jpg"/>
-                    </resource>
-                </image>
-                <label value="&#20316;&#19994;&#25351;&#23548;&#20070;"
-                       align="MIDDLE_CENTER" css="font-size:30px"/>
+                <label value="test" align="MIDDLE_CENTER"  width="800" height="100"
+                       stylename="wi-caption" />
             </hbox>
             <hbox>
-                <image css="border: 1px solid #000">
-                    <resource>
-                        <classpath path="/images/haier-logo.jpg"/>
-                    </resource>
-                </image>
-                <label value="&#20316;&#19994;&#25351;&#23548;&#20070;"
-                       align="MIDDLE_CENTER" css="font-size:30px"/>
+                <label value="test" align="MIDDLE_CENTER"  width="800" height="100%"
+                       stylename="wi-caption" />
             </hbox>
             <hbox>
-                <image css="border: 1px solid #000">
-                    <resource>
-                        <classpath path="/images/haier-logo.jpg"/>
-                    </resource>
-                </image>
-                <label value="&#20316;&#19994;&#25351;&#23548;&#20070;"
-                       align="MIDDLE_CENTER" css="font-size:30px"/>
+                <label value="test" align="MIDDLE_CENTER"  width="800" height="100%"
+                        />
             </hbox>
         </vbox>
 

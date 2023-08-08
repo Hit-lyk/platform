@@ -1,0 +1,8 @@
+@import "haier-defaults";
+@import "addons";
+@import "haier";
+
+.haier {
+  @include addons;
+  @include haier;
+}

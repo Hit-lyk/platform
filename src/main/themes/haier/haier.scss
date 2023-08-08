@@ -1,0 +1,32 @@
+@import "../helium/helium";
+
+@mixin haier {
+  @include helium;
+    .wi-frame {
+      box-sizing:border-box;
+      border: 2px solid #000;
+    }
+    .wi-border-right-bottom {
+      box-sizing:border-box;
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+    .wi-border-right {
+      box-sizing:border-box;
+      border-right: 1px solid #000;
+    }
+    .wi-border-bottom {
+      box-sizing:border-box;
+      border-bottom: 1px solid #000;
+    }
+    .wi-caption {
+      font-size: 30px;
+    }
+    .wi-item-text {
+      font-size: 26px;
+      font-weight:bold;
+    }
+    .wi-text {
+      font-size: 24px;
+    }
+}
