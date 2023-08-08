@@ -10,6 +10,8 @@
         <item screen="ProductDisassemblyProcessDefine.browse"
               caption="msg://com.company.platform.screen.productdisassemblyprocessdefine/productDisassemblyProcessDefineBrowse.menu"/>
         <item screen="GraphDemo" caption="msg://com.company.platform.screen.graphdemo/graphDemo.caption"/>
+        <item screen="WorkingInstruction"
+              caption="msg://com.company.platform.screen.workinginstruction/workingInstruction.caption"/>
     </menu>
     <item screen="TestScreen" caption="msg://com.company.platform.screen.test/testScreen.caption"/>
 </menu-config>

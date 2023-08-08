@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://workingInstruction.caption">
+    <layout>
+        <vbox css="border:1px solid #000">
+            <hbox height="150px">
+                <image css="border: 1px solid #000" align="MIDDLE_CENTER" height="100%">
+                    <resource>
+                        <classpath path="/images/haier-logo.jpg"/>
+                    </resource>
+                </image>
+                <label value="&#20316;&#19994;&#25351;&#23548;&#20070;"
+                       align="MIDDLE_CENTER" css="font-size:30px"/>
+            </hbox>
+            <hbox>
+                <image css="border: 1px solid #000">
+                    <resource>
+                        <classpath path="/images/haier-logo.jpg"/>
+                    </resource>
+                </image>
+                <label value="&#20316;&#19994;&#25351;&#23548;&#20070;"
+                       align="MIDDLE_CENTER" css="font-size:30px"/>
+            </hbox>
+            <hbox>
+                <image css="border: 1px solid #000">
+                    <resource>
+                        <classpath path="/images/haier-logo.jpg"/>
+                    </resource>
+                </image>
+                <label value="&#20316;&#19994;&#25351;&#23548;&#20070;"
+                       align="MIDDLE_CENTER" css="font-size:30px"/>
+            </hbox>
+            <hbox>
+                <image css="border: 1px solid #000">
+                    <resource>
+                        <classpath path="/images/haier-logo.jpg"/>
+                    </resource>
+                </image>
+                <label value="&#20316;&#19994;&#25351;&#23548;&#20070;"
+                       align="MIDDLE_CENTER" css="font-size:30px"/>
+            </hbox>
+        </vbox>
+
+    </layout>
+</window>
