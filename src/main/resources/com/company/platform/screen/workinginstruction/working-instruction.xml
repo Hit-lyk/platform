@@ -2,30 +2,273 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://workingInstruction.caption">
     <layout>
-        <vbox stylename="wi-frame">
-            <hbox height="100px">
+        <vbox stylename="wi-frame" width="1500">
+            <hbox height="105px">
                 <image align="MIDDLE_CENTER" width="260" height="100%" stylename="wi-border-right-bottom">
                     <resource>
                         <classpath path="/images/haier-logo.jpg"/>
                     </resource>
                 </image>
-                <hbox width="800" height="100%" stylename="wi-border-right-bottom">
+                <hbox width="1000" height="100%" stylename="wi-border-right-bottom">
                     <label align="MIDDLE_CENTER" value="&#20316;&#19994;&#25351;&#23548;&#20070;" stylename="wi-caption"/>
+                </hbox>
+                <vbox>
+                    <hbox  height="35">
+                        <hbox width="118" stylename="wi-border-right-bottom" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#25991;&#20214;&#21495;"/>
+                        </hbox>
+                        <hbox stylename="wi-border-bottom" height="100%" width="120">
+                            <label align="MIDDLE_CENTER" value="HLY-QR-010"/>
+                        </hbox>
+                    </hbox>
+                    <hbox  height="35">
+                        <hbox width="118" stylename="wi-border-right-bottom" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#29256;&#27425;&#21495;"/>
+                        </hbox>
+                        <hbox stylename="wi-border-bottom" height="100%" width="120">
+                            <label align="MIDDLE_CENTER" value="A0"/>
+                        </hbox>
+                    </hbox>
+                    <hbox height="35">
+                        <hbox width="118" stylename="wi-border-right-bottom" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#29983;&#25928;&#26399;"/>
+                        </hbox>
+                        <hbox stylename="wi-border-bottom" height="100%" width="120">
+                            <label align="MIDDLE_CENTER" value="2023&#24180;2&#26376;18"/>
+                        </hbox>
+                    </hbox>
+                </vbox>
+            </hbox>
+            <hbox height="70">
+                <hbox width="260" stylename="wi-border-right-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="&#20135;&#21697;&#21697;&#31867;"/>
+                </hbox>
+                <hbox width="100" stylename="wi-border-right-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="&#20912;&#26588;"/>
+                </hbox>
+                <hbox width="200" stylename="wi-border-right-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="&#22411;&#21495;"/>
+                </hbox>
+                <hbox width="200" stylename="wi-border-right-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="EMR&#20912;&#26588;&#65288;&#19981;&#21547;&#27679;&#21033;&#26114;&#65289;"
+                           id="typeContent"/>
+                </hbox>
+                <hbox width="130px" stylename="wi-border-right-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="&#19978;&#24037;&#20301;&#21517;&#31216;"/>
+                </hbox>
+                <hbox width="120px" stylename="wi-border-right-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="&#26080;"/>
+                </hbox>
+                <hbox width="130px" stylename="wi-border-right-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="&#26412;&#24037;&#20301;&#21517;&#31216;"/>
+                </hbox>
+                <hbox width="120px" stylename="wi-border-right-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="&#19978;&#26009;"/>
+                </hbox>
+                <hbox width="118" stylename="wi-border-right-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="&#19979;&#24037;&#20301;&#21517;&#31216;"/>
+                </hbox>
+                <hbox width="120" stylename="wi-border-bottom" height="100%">
+                    <label align="MIDDLE_CENTER" value="&#39044;&#25286;&#35299;1"/>
                 </hbox>
             </hbox>
             <hbox>
-                <label value="test" align="MIDDLE_CENTER"  width="800" height="100"
-                       stylename="wi-caption" />
-            </hbox>
-            <hbox>
-                <label value="test" align="MIDDLE_CENTER"  width="800" height="100%"
-                       stylename="wi-caption" />
-            </hbox>
-            <hbox>
-                <label value="test" align="MIDDLE_CENTER"  width="800" height="100%"
+                <vbox width="260">
+                    <hbox stylename="wi-border-right-bottom" height="35" width="100%">
+                        <label align="MIDDLE_CENTER" value="&#19978;&#23703;&#23433;&#20840;&#39035;&#30693;" stylename="wi-item-title"
                         />
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="125">
+                        <label align="MIDDLE_CENTER" value="&#19978;&#23703;&#23433;&#20840;&#39035;&#30693;"
+                               id="contentSGAQXZ" width="100%"/>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#29677;&#21069;&#20934;&#22791;" stylename="wi-item-title"/>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="150">
+                        <label align="MIDDLE_CENTER" value="&#19978;&#23703;&#23433;&#20840;&#39035;&#30693;"
+                               id="contentBQZB" width="100%"/>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#29677;&#21518;&#20107;&#39033;" stylename="wi-item-title"/>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="150px">
+                        <label align="TOP_CENTER" value="&#19978;&#23703;&#23433;&#20840;&#39035;&#30693;"
+                               id="contentBHSX" width="100%"/>
+                    </hbox>
+                </vbox>
+                <vbox width="500">
+                    <hbox stylename="wi-border-right-bottom" height="35" width="100%">
+                        <label align="MIDDLE_CENTER" value="&#25805;&#20316;&#24037;&#27493;&#21450;&#26631;&#20934;" stylename="wi-item-title"/>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="495px">
+                        <label align="TOP_CENTER" value="&#19978;&#23703;&#23433;&#20840;&#39035;&#30693;"
+                               id="contentCZGBJBZ" width="100%"/>
+                    </hbox>
+                </vbox>
+                <vbox width="250">
+                    <hbox stylename="wi-border-right-bottom" height="35" width="100%">
+                        <label align="MIDDLE_CENTER" value="&#38647;&#21306;/&#24066;&#22330;&#38382;&#39064;" stylename="wi-item-title"
+                        />
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="125">
+                        <label align="TOP_CENTER" value="&#19978;&#23703;&#23433;&#20840;&#39035;&#30693;"
+                               id="contentLQSCWT" width="100%"/>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#35302;&#38647;&#21518;&#26524; " stylename="wi-item-title"/>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="150">
+                        <label align="TOP_CENTER" value="&#19978;&#23703;&#23433;&#20840;&#39035;&#30693;"
+                               id="contentCLHG" width="100%"/>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value=" &#24037;&#35013;&#22120;&#20855;" stylename="wi-item-title"/>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="150px">
+                        <label align="TOP_CENTER" value="&#19978;&#23703;&#23433;&#20840;&#39035;&#30693;"
+                               id="contentGZQJ" width="100%"/>
+                    </hbox>
+                </vbox>
+                <vbox width="250">
+                    <hbox stylename="wi-border-right-bottom" height="35" width="100%">
+                        <label align="MIDDLE_CENTER" value="&#25805;&#20316;" stylename="wi-item-title"
+                        />
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="125">
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#24320;&#31548;&#31568;"/>
+                        </hbox>
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#25195;&#30721;"/>
+                        </hbox>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="150">
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#24320;&#20912;&#31665;&#38376;"/>
+                        </hbox>
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#21462;&#26434;&#29289;"/>
+                        </hbox>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="115px">
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#19978;&#26009;"/>
+                        </hbox>
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#21449;&#21544;&#21253;"/>
+                        </hbox>
+                    </hbox>
+                </vbox>
+                <vbox width="238">
+                    <hbox stylename="wi-border-bottom" height="35" width="100%">
+                        <label align="MIDDLE_CENTER" value="&#25286;&#35299;&#20135;&#29289;" stylename="wi-item-title"
+                        />
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-bottom" height="125">
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-bottom" height="35">
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="EPS&#21253;&#26448;"/>
+                        </hbox>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-bottom" height="150">
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-bottom" height="35">
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#24223;&#26434;&#29289;"/>
+                        </hbox>
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#29627;&#29827;"/>
+                        </hbox>
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-bottom" height="115px">
+                    </hbox>
+                    <hbox width="100%" stylename="wi-border-bottom" height="35">
+                        <hbox width="100%" height="100%">
+                            <label align="MIDDLE_CENTER" value="&#25346;&#21544;&#21253;"/>
+                        </hbox>
+                    </hbox>
+                </vbox>
+            </hbox>
+            <hbox>
+                <vbox width="360">
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#32534;&#21046;&#20381;&#25454;"/>
+                    </hbox>
+                    <hbox width="100%" height="105" stylename="wi-border-right">
+                        <label align="MIDDLE_CENTER" value="&#24223;&#24323;&#30005;&#22120;&#30005;&#23376;&#20135;&#21697;&#35268;&#33539;&#25286;&#35299;&#22788;&#29702;&#20316;&#19994;&#21450;&#29983;&#20135;&#31649;&#29702;&#25351;&#21335;&#65288;2015 &#24180;&#29256;&#65289;"
+                               width="100%"/>
+                    </hbox>
+                </vbox>
+                <vbox width="200px">
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#32534;&#21046;"/>
+                    </hbox>
+                    <hbox width="100%" height="105" stylename="wi-border-right">
+                    </hbox>
+                </vbox>
+                <vbox width="200px">
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#23457;&#26680;"/>
+                    </hbox>
+                    <hbox width="100%" height="105" stylename="wi-border-right">
+                    </hbox>
+                </vbox>
+                <vbox width="130">
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#20250;&#31614;"/>
+                    </hbox>
+                    <hbox width="100%" height="105" stylename="wi-border-right">
+                    </hbox>
+                </vbox>
+                <vbox width="120">
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#25209;&#20934;"/>
+                    </hbox>
+                    <hbox width="100%" height="105" stylename="wi-border-right">
+                    </hbox>
+                </vbox>
+                <vbox width="130">
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#26356;&#25913;&#26102;&#38388;"/>
+                    </hbox>
+                    <hbox width="100%" height="35" stylename="wi-border-right-bottom">
+                    </hbox>
+                    <hbox width="100%" height="35" stylename="wi-border-right-bottom">
+                    </hbox>
+                    <hbox width="100%" height="35" stylename="wi-border-right">
+                    </hbox>
+                </vbox>
+                <vbox width="238">
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#26356;&#25913;&#20869;&#23481;"/>
+                    </hbox>
+                    <hbox width="100%" height="35" stylename="wi-border-right-bottom">
+                    </hbox>
+                    <hbox width="100%" height="35" stylename="wi-border-right-bottom">
+                    </hbox>
+                    <hbox width="100%" height="35" stylename="wi-border-right">
+                    </hbox>
+                </vbox>
+                <vbox width="120">
+                    <hbox width="100%" stylename="wi-border-right-bottom" height="35">
+                        <label align="MIDDLE_CENTER" value="&#26356;&#25913;&#20154;"/>
+                    </hbox>
+                    <hbox width="100%" height="35" stylename="wi-border-bottom">
+                    </hbox>
+                    <hbox width="100%" height="35" stylename="wi-border-bottom">
+                    </hbox>
+                    <hbox width="100%" height="35">
+                    </hbox>
+                </vbox>
             </hbox>
         </vbox>
-
     </layout>
 </window>
