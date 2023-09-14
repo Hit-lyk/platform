@@ -12,6 +12,10 @@
         <item screen="GraphDemo" caption="msg://com.company.platform.screen.graphdemo/graphDemo.caption"/>
         <item screen="WorkingInstruction"
               caption="msg://com.company.platform.screen.workinginstruction/workingInstruction.caption"/>
+        <item screen="PredictionScreen"
+              caption="msg://com.company.platform.screen.prediction/predictionScreen.caption"/>
+        <item screen="WorkGuidInfo.browse"
+              caption="msg://com.company.platform.screen.workguidinfo/workGuidInfoBrowse.menu"/>
     </menu>
     <item screen="TestScreen" caption="msg://com.company.platform.screen.test/testScreen.caption"/>
 </menu-config>

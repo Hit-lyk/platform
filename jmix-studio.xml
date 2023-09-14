@@ -9,11 +9,11 @@
     <moduleSettings>
       <entry key="platform.main">
         <ModuleSettings>
-          <option name="dataStoreOptionsV2">
+          <option name="dataStoreOptions">
             <map>
               <entry key="main">
                 <value>
-                  <DataStoreSettingsV2 />
+                  <DataStoreSettings />
                 </value>
               </entry>
             </map>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://workGuidInfoEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="workGuidInfoDc"
+                  class="com.company.platform.entity.WorkGuidInfo">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="editActions">
+        <form id="form" dataContainer="workGuidInfoDc">
+            <column width="350px">
+                <textField id="work_safetyField" property="work_safety"/>
+                <textField id="before_workField" property="before_work"/>
+                <textField id="after_workField" property="after_work"/>
+                <textArea id="step_stdField" property="step_std" rows="5"/>
+                <textField id="minefieldField" property="minefield"/>
+                <textField id="after_mineField" property="after_mine"/>
+                <textField id="device_toolsField" property="device_tools"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
