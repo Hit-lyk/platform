@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
-        caption="msg://workGuidInfoEdit.caption"
+        caption="msg://cameraInfoEdit.caption"
         focusComponent="form">
     <data>
-        <instance id="workGuidInfoDc"
-                  class="com.company.platform.entity.WorkGuidInfo">
+        <instance id="cameraInfoDc"
+                  class="com.company.platform.entity.CameraInfo">
             <fetchPlan extends="_base"/>
             <loader/>
         </instance>
@@ -25,16 +25,15 @@
     <dialogMode height="600"
                 width="800"/>
     <layout spacing="true" expand="editActions">
-        <form id="form" dataContainer="workGuidInfoDc">
+        <form id="form" dataContainer="cameraInfoDc">
             <column width="350px">
-                <textArea id="fileNoField" property="fileNo"/>
-                <textArea id="work_safetyField" property="work_safety"/>
-                <textArea id="before_workField" property="before_work"/>
-                <textArea id="after_workField" property="after_work"/>
-                <textArea id="step_stdField" property="step_std" rows="5"/>
-                <textArea id="minefieldField" property="minefield"/>
-                <textArea id="after_mineField" property="after_mine"/>
-                <textArea id="device_toolsField" property="device_tools"/>
+                <textField id="ipField" property="ip"/>
+                <textField id="portField" property="port"/>
+                <textField id="usernameField" property="username"/>
+                <textField id="passwordField" property="password"/>
+                <textField id="descriptionField" property="description"/>
+                <textField id="groupNoField" property="groupNo"/>
+                <textField id="pathPlaybackField" property="pathPlayback"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

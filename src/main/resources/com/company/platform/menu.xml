@@ -16,6 +16,7 @@
               caption="msg://com.company.platform.screen.prediction/predictionScreen.caption"/>
         <item screen="WorkGuidInfo.browse"
               caption="msg://com.company.platform.screen.workguidinfo/workGuidInfoBrowse.menu"/>
+        <item screen="CameraInfo.browse" caption="msg://com.company.platform.screen.camerainfo/cameraInfoBrowse.menu"/>
     </menu>
     <item screen="TestScreen" caption="msg://com.company.platform.screen.test/testScreen.caption"/>
 </menu-config>

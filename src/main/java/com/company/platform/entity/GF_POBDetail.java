@@ -16,7 +16,7 @@ import java.util.UUID;
 
 @JmixEntity
 @Table(name = "GF_POB_DETAIL")
-@Entity(name = "sampler_DateValue")
+@Entity
 public class GF_POBDetail {
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)

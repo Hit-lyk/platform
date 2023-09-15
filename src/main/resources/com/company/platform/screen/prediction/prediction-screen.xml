@@ -6,7 +6,7 @@
             <fetchPlan extends="_local"/>
             <loader id="dateValueLoader">
                 <query>
-                    <![CDATA[select e from sampler_DateValue e order by e.createdDate]]>
+                    <![CDATA[select e from GF_POBDetail e order by e.createdDate]]>
                 </query>
             </loader>
         </collection>

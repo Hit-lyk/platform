@@ -15,6 +15,9 @@ public class WorkGuidInfo {
     @Id
     private UUID id;
 
+    @Column(name = "FILE_NO")
+    private String fileNo;
+
     @Column(name = "WORK_SAFETY")
     private String work_safety;
 
@@ -36,6 +39,14 @@ public class WorkGuidInfo {
 
     @Column(name = "DEVICE_TOOLS")
     private String device_tools;
+
+    public String getFileNo() {
+        return fileNo;
+    }
+
+    public void setFileNo(String fileNo) {
+        this.fileNo = fileNo;
+    }
 
     public String getDevice_tools() {
         return device_tools;
