@@ -15,9 +15,20 @@ public class ProduceInfo {
     @Id
     private UUID id;
 
+    @Column(name = "STATION", length = 16)
+    private String station;
+
     @Column(name = "OPERATE_INFO")
     @Lob
     private String operateInfo;
+
+    public String getStation() {
+        return station;
+    }
+
+    public void setStation(String station) {
+        this.station = station;
+    }
 
     public String getOperateInfo() {
         return operateInfo;

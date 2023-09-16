@@ -18,6 +18,8 @@
               caption="msg://com.company.platform.screen.workguidinfo/workGuidInfoBrowse.menu"/>
         <item screen="CameraInfo.browse" caption="msg://com.company.platform.screen.camerainfo/cameraInfoBrowse.menu"/>
         <item screen="SensorInfo.browse" caption="msg://com.company.platform.screen.sensorinfo/sensorInfoBrowse.menu"/>
+        <item screen="ProduceInfo.browse"
+              caption="msg://com.company.platform.screen.produceinfo/produceInfoBrowse.menu"/>
     </menu>
     <item screen="TestScreen" caption="msg://com.company.platform.screen.test/testScreen.caption"/>
 </menu-config>
