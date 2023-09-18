@@ -15,19 +15,19 @@ public class ProduceInfo {
     @Id
     private UUID id;
 
-    @Column(name = "STATION", length = 16)
-    private String station;
+    @Column(name = "STATION")
+    private Integer station;
 
     @Column(name = "OPERATE_INFO")
     @Lob
     private String operateInfo;
 
-    public String getStation() {
-        return station;
+    public void setStation(StationType station) {
+        this.station = station == null ? null : station.getId();
     }
 
-    public void setStation(String station) {
-        this.station = station;
+    public StationType getStation() {
+        return station == null ? null : StationType.fromId(station);
     }
 
     public String getOperateInfo() {

@@ -27,10 +27,40 @@
     <layout spacing="true" expand="editActions">
         <form id="form" dataContainer="produceInfoDc">
             <column width="350px">
-                <textField id="stationField" property="station"/>
+                <comboBox id="stationField" property="station"/>
                 <textArea id="operateInfoField" property="operateInfo" rows="5"/>
             </column>
         </form>
+        <vbox id="feeding" visible="false">
+            <label align="MIDDLE_LEFT" value="EPS&#21253;&#26448;"/>
+            <hbox>
+                <textField id="epsCount"/>
+            </hbox>
+            <hbox>
+                <textField id="epsNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#24223;&#26434;&#29289;"/>
+            <hbox>
+                <textField id="gobCount"/>
+            </hbox>
+            <hbox>
+                <textField id="gobNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#29627;&#29827;"/>
+            <hbox>
+                <textField id="glassCount"/>
+            </hbox>
+            <hbox>
+                <textField id="glassNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#25346;&#21544;&#21253;"/>
+            <hbox>
+                <textField id="feedingTonbagCount"/>
+            </hbox>
+            <hbox>
+                <textField id="feedingTonbagNote"/>
+            </hbox>
+        </vbox>
         <hbox id="editActions" spacing="true">
             <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
             <button id="closeBtn" action="windowClose"/>
