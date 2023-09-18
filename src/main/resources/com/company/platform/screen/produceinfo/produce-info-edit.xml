@@ -28,37 +28,293 @@
         <form id="form" dataContainer="produceInfoDc">
             <column width="350px">
                 <comboBox id="stationField" property="station"/>
-                <textArea id="operateInfoField" property="operateInfo" rows="5"/>
+                <textArea id="operateInfoField" property="operateInfo" rows="5" visible="false"/>
             </column>
         </form>
-        <vbox id="feeding" visible="false">
+        <vbox id="feeding" visible="false" spacing="true">
             <label align="MIDDLE_LEFT" value="EPS&#21253;&#26448;"/>
-            <hbox>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
                 <textField id="epsCount"/>
             </hbox>
-            <hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
                 <textField id="epsNote"/>
             </hbox>
             <label align="MIDDLE_LEFT" value="&#24223;&#26434;&#29289;"/>
-            <hbox>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
                 <textField id="gobCount"/>
             </hbox>
-            <hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
                 <textField id="gobNote"/>
             </hbox>
             <label align="MIDDLE_LEFT" value="&#29627;&#29827;"/>
-            <hbox>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
                 <textField id="glassCount"/>
             </hbox>
-            <hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
                 <textField id="glassNote"/>
             </hbox>
             <label align="MIDDLE_LEFT" value="&#25346;&#21544;&#21253;"/>
-            <hbox>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
                 <textField id="feedingTonbagCount"/>
             </hbox>
-            <hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
                 <textField id="feedingTonbagNote"/>
+            </hbox>
+        </vbox>
+        <vbox id="preTakeApart1" visible="false" spacing="true">
+            <label align="MIDDLE_LEFT" value="&#30005;&#28304;&#32447;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="powerlineCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="powerlineNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#24223;&#26434;&#26009;&#65288;&#38450;&#28526;&#26495;&#65289;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="mpbCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="mpbNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#25346;&#21544;&#21253;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="ta1TonbagCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="ta1TonbagNote"/>
+            </hbox>
+        </vbox>
+        <vbox id="preTakeApart2" visible="false" spacing="true">
+            <label align="MIDDLE_LEFT" value="&#26434;&#38081;&#65288;&#36710;&#36721;&#36760;&#65289;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="wheelCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="wheelNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#24223;&#26434;&#26009;&#65288;&#38450;&#28526;&#26495;&#65289;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="screwCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="screwNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#25346;&#21544;&#21253;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="ta2TonbagCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="ta2TonbagNote"/>
+            </hbox>
+        </vbox>
+        <vbox id="preTakeApart3" visible="false" spacing="true">
+            <label align="MIDDLE_LEFT" value="&#38128;&#38142;&#30422;&#26495;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="hcpCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="hcpNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#22609;&#26009;&#22806;&#22771;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="plasticCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="plasticNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#26434;&#38081;&#65288;&#21152;&#24378;&#31563;&#65289;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="ribsCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="ribsNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#23494;&#23553;&#26465;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="stripCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="stripNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#25346;&#21544;&#21253;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="ta3TonbagCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="ta3TonbagNote"/>
+            </hbox>
+        </vbox>
+        <vbox id="preTakeApart4" visible="false" spacing="true">
+            <label align="MIDDLE_LEFT" value="&#21387;&#32553;&#26426;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="compressorCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="compressorNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#30005;&#23481;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="capacitanceCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="capacitanceNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#38108;&#31649;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="tubeCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="tubeNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#28201;&#25511;&#22120;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="ksdCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="ksdNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#30005;&#36335;&#26495;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="circuitCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="circuitNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#21387;&#32553;&#26426;&#25670;&#25918;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="cpCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="cpNote"/>
+            </hbox>
+        </vbox>
+        <vbox id="powerLineSorting" visible="false" spacing="true">
+            <label align="MIDDLE_LEFT" value="&#30005;&#28304;&#32447;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="powerlineSortCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="powerlineSortNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#38108;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="copperCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="copperNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#25346;&#21544;&#21253;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="plsTonbagCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="plsTonbagNote"/>
+            </hbox>
+        </vbox>
+        <vbox id="plasticMetalDischarge" visible="false" spacing="true">
+            <label align="MIDDLE_LEFT" value="&#30772;&#30862;&#38081;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="ironCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="ironNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#30772;&#30862;&#22609;&#26009;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="crushPlasticCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="crushPlasticNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#30772;&#30862;&#38109;&#65288;&#21547;&#38108;&#65289;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="caccCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="caccNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#25346;&#21544;&#21253;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="pmdTonbagCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="pmdTonbagNote"/>
+            </hbox>
+        </vbox>
+        <vbox id="foamDischarge" visible="false" spacing="true">
+            <label align="MIDDLE_LEFT" value="&#27873;&#26825;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="foamCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="foamNote"/>
+            </hbox>
+            <label align="MIDDLE_LEFT" value="&#35013;&#26694;"/>
+            <hbox spacing="true">
+                <label value="&#25968;&#37327;" align="MIDDLE_LEFT"/>
+                <textField id="frameCount"/>
+            </hbox>
+            <hbox spacing="true">
+                <label value="&#35828;&#26126;" align="MIDDLE_LEFT"/>
+                <textField id="frameNote"/>
             </hbox>
         </vbox>
         <hbox id="editActions" spacing="true">
