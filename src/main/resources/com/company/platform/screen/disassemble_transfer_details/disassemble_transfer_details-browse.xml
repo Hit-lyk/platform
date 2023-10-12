@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://disassemble_transfer_detailsBrowse.caption"
+        focusComponent="disassemble_transfer_detailsesTable">
+    <data readOnly="true">
+        <collection id="disassemble_transfer_detailsesDc"
+                    class="com.company.platform.entity.Disassemble_transfer_details">
+            <fetchPlan extends="_base"/>
+            <loader id="disassemble_transfer_detailsesDl">
+                <query>
+                    <![CDATA[select e from Disassemble_transfer_details e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="disassemble_transfer_detailsesTable" spacing="true">
+        <filter id="filter"
+                dataLoader="disassemble_transfer_detailsesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="disassemble_transfer_detailsesTable"
+                    width="100%"
+                    dataContainer="disassemble_transfer_detailsesDc">
+            <actions>
+            </actions>
+            <columns>
+                <column id="id"/>
+                <column id="factory"/>
+                <column id="outbound_tracking_number"/>
+                <column id="finished_barcodes"/>
+                <column id="weight"/>
+                <column id="scan_time"/>
+                <column id="product_type"/>
+                <column id="product_model"/>
+                <column id="product_description"/>
+                <column id="ware_house"/>
+                <column id="reservoir_area"/>
+                <column id="bin_location"/>
+                <column id="product_state"/>
+                <column id="bill_number"/>
+                <column id="delivery_note"/>
+                <column id="order_line_items"/>
+                <column id="scanner"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

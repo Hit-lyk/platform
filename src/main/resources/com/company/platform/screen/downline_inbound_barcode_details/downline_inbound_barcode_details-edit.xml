@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://downline_inbound_barcode_detailsEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="downline_inbound_barcode_detailsDc"
+                  class="com.company.platform.entity.Downline_inbound_barcode_details">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="downline_inbound_barcode_detailsDc">
+                <column width="350px">
+                    <textField id="production_order_numberField" property="production_order_number"/>
+                    <textField id="trayField" property="tray"/>
+                    <textField id="barcodeField" property="barcode"/>
+                    <textField id="item_codeField" property="item_code"/>
+                    <textField id="item_descriptionField" property="item_description"/>
+                    <textField id="weightField" property="weight"/>
+                    <textField id="batch_numberField" property="batch_number"/>
+                    <textField id="reservoir_areaField" property="reservoir_area"/>
+                    <textField id="storage_bitField" property="storage_bit"/>
+                    <textField id="posting_statusField" property="posting_status"/>
+                    <textField id="posting_informationField" property="posting_information"/>
+                    <textField id="posting_documentField" property="posting_document"/>
+                    <textField id="scannerField" property="scanner"/>
+                    <textField id="record_timeField" property="record_time"/>
+                </column>
+            </form>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

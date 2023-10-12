@@ -20,6 +20,11 @@
         <item screen="SensorInfo.browse" caption="msg://com.company.platform.screen.sensorinfo/sensorInfoBrowse.menu"/>
         <item screen="ProduceInfo.browse"
               caption="msg://com.company.platform.screen.produceinfo/produceInfoBrowse.menu"/>
+        <item screen="Test_sen.browse" caption="msg://com.company.platform.screen.test_sen/test_senBrowse.menu"/>
+        <item screen="Disassemble_transfer_details.browse"
+              caption="msg://com.company.platform.screen.disassemble_transfer_details/disassemble_transfer_detailsBrowse.menu"/>
+        <item screen="Product_Inventory.browse"
+              caption="msg://com.company.platform.screen.product_inventory/product_InventoryBrowse.menu"/>
     </menu>
     <item screen="TestScreen" caption="msg://com.company.platform.screen.test/testScreen.caption"/>
 </menu-config>

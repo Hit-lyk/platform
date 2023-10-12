@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.11.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="platform">
+        <createTable tableName="PRODUCT_INVENTORY">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_PRODUCT_INVENTORY"/>
+            </column>
+            <column name="ITEM_CODE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ITEM_NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="WAREHOUSE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RESERVOIR_AREA" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SHELF_CODE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BIN_LOCATON" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="QUANTITY" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UNIT" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FACTORY" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="BILL_NUMBER"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="3" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="BIN_LOCATION"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="4" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="DELIVERY_NOTE"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="5" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="FINISHED_BARCODES"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="6" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="ORDER_LINE_ITEMS"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="7" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="PRODUCT_DESCRIPTION"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="8" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="PRODUCT_MODEL"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="9" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="PRODUCT_STATE"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="10" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="PRODUCT_TYPE"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="11" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="RESERVOIR_AREA"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="12" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="SCANNER"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="13" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="SCAN_TIME"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="14" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="WARE_HOUSE"
+                              tableName="DISASSEMBLE_TRANSFER_DETAILS" validate="true"/>
+    </changeSet>
+    <changeSet id="15" author="platform">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="WEIGHT" tableName="DISASSEMBLE_TRANSFER_DETAILS"
+                              validate="true"/>
+    </changeSet>
+</databaseChangeLog>

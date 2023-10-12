@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://test_senBrowse.caption"
+        focusComponent="test_sensTable">
+    <data readOnly="true">
+        <collection id="test_sensDc"
+                    class="com.company.platform.entity.Test_sen">
+            <fetchPlan extends="_base"/>
+            <loader id="test_sensDl">
+                <query>
+                    <![CDATA[select e from Test_sen e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="test_sensTable" spacing="true">
+        <filter id="filter"
+                dataLoader="test_sensDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="test_sensTable"
+                    width="100%"
+                    dataContainer="test_sensDc">
+            <actions>
+            </actions>
+            <columns>
+                <column id="id"/>
+                <column id="sn"/>
+                <column id="record_time"/>
+                <column id="temp"/>
+                <column id="humidity"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

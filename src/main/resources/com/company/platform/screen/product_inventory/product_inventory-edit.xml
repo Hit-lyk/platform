@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://product_InventoryEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="product_InventoryDc"
+                  class="com.company.platform.entity.Product_Inventory">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="editActions">
+        <form id="form" dataContainer="product_InventoryDc">
+            <column width="350px">
+                <textField id="idField" property="id"/>
+                <textField id="item_codeField" property="item_code"/>
+                <textField id="item_nameField" property="item_name"/>
+                <textField id="warehouseField" property="warehouse"/>
+                <textField id="reservoir_areaField" property="reservoir_area"/>
+                <textField id="shelf_codeField" property="shelf_code"/>
+                <textField id="bin_locatonField" property="bin_locaton"/>
+                <textField id="quantityField" property="quantity"/>
+                <textField id="unitField" property="unit"/>
+                <textField id="factoryField" property="factory"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

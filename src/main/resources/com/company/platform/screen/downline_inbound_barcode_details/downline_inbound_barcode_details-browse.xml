@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://downline_inbound_barcode_detailsBrowse.caption"
+        focusComponent="downline_inbound_barcode_detailsesTable">
+    <data readOnly="true">
+        <collection id="downline_inbound_barcode_detailsesDc"
+                    class="com.company.platform.entity.Downline_inbound_barcode_details">
+            <fetchPlan extends="_base"/>
+            <loader id="downline_inbound_barcode_detailsesDl">
+                <query>
+                    <![CDATA[select e from Downline_inbound_barcode_details e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="downline_inbound_barcode_detailsesTable" spacing="true">
+        <filter id="filter"
+                dataLoader="downline_inbound_barcode_detailsesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="downline_inbound_barcode_detailsesTable"
+                    width="100%"
+                    dataContainer="downline_inbound_barcode_detailsesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="production_order_number"/>
+                <column id="tray"/>
+                <column id="barcode"/>
+                <column id="item_code"/>
+                <column id="item_description"/>
+                <column id="weight"/>
+                <column id="batch_number"/>
+                <column id="reservoir_area"/>
+                <column id="storage_bit"/>
+                <column id="posting_status"/>
+                <column id="posting_information"/>
+                <column id="posting_document"/>
+                <column id="scanner"/>
+                <column id="record_time"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="downline_inbound_barcode_detailsesTable.create"/>
+                <button id="editBtn" action="downline_inbound_barcode_detailsesTable.edit"/>
+                <button id="removeBtn" action="downline_inbound_barcode_detailsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
