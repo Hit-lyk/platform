@@ -1,12 +1,22 @@
 package com.company.platform.screen.workinginstruction;
 
+import com.company.platform.entity.WorkGuidInfo;
 import com.company.platform.state.GraphState;
+import io.jmix.core.DataManager;
+import io.jmix.ui.component.ComboBox;
+import io.jmix.ui.component.HasValue;
 import io.jmix.ui.component.Label;
 import io.jmix.ui.screen.Screen;
 import io.jmix.ui.screen.Subscribe;
 import io.jmix.ui.screen.UiController;
 import io.jmix.ui.screen.UiDescriptor;
+import io.jmix.ui.widget.JmixComboBox;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @UiController("WorkingInstruction")
 @UiDescriptor("working-instruction.xml")
@@ -27,9 +37,21 @@ public class WorkingInstruction extends Screen {
     private Label contentCLHG;
     @Autowired
     private Label contentGZQJ;
+    @Autowired
+    private DataManager dataManager;
+    @Autowired
+    private ComboBox<Integer> comboFileNo;
 
+    private List<WorkGuidInfo> listInfo;
+    Map<String, Integer> itemList = new HashMap<String, Integer>();
     @Subscribe
     protected void onInit(InitEvent event) {
+        listInfo = dataManager.load(WorkGuidInfo.class).all().list();
+        for(int i=0; i<listInfo.size(); i++){
+            WorkGuidInfo infoWorkGuid = listInfo.get(i);
+            itemList.put(infoWorkGuid.getFileNo(), i);
+        }
+        comboFileNo.setOptionsMap(itemList);
         typeContent.setValue("\u2002\u2002\u2002EMR冰柜\n（不含氟利昂）");
         contentSGAQXZ.setValue("1.戴好防护用具（安全帽，口罩，胶皮手套，护目镜，耳塞，三防鞋，围裙，套袖）\n2.检查安全通道是否畅通，是否有应急措施和物品。");
         contentBQZB.setValue("机：检查设备是否完好\n" +
@@ -59,5 +81,20 @@ public class WorkingInstruction extends Screen {
                 "2、影响拆解产物价值\n" +
                 "3、堵塞冰箱破碎设备，影响拆解效率、降低刀具寿命");
         contentGZQJ.setValue("上料工位屏、扫码枪、吨包支架、吨包");
+    }
+
+    @Subscribe("comboFileNo")
+    public void onComboFileNoValueChange(final HasValue.ValueChangeEvent event) {
+        Integer  itemIndex = event.getValue().hashCode();
+//        Integer itemIndex = itemList.get(fileNo);
+        WorkGuidInfo infoWorkGuid = listInfo.get(itemIndex);
+
+        contentSGAQXZ.setValue(infoWorkGuid.getWork_safety());
+        contentBQZB.setValue(infoWorkGuid.getBefore_work());
+        contentBHSX.setValue(infoWorkGuid.getAfter_work());
+        contentCZGBJBZ.setValue(infoWorkGuid.getStep_std());
+        contentLQSCWT.setValue(infoWorkGuid.getMinefield());
+        contentCLHG.setValue(infoWorkGuid.getAfter_mine());
+        contentGZQJ.setValue(infoWorkGuid.getDevice_tools());
     }
 }

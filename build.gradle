@@ -1,12 +1,12 @@
 plugins {
-    id 'io.jmix' version '1.5.3'
+    id 'io.jmix' version '1.5.4'
     id 'java'
 }
 
 apply plugin: 'org.springframework.boot'
 
 jmix {
-    bomVersion = '1.5.3'
+    bomVersion = '1.5.4'
 }
 
 group = 'com.company'
@@ -49,6 +49,8 @@ dependencies {
     implementation 'org.neo4j.driver:neo4j-java-driver:5.11.0'
     themes 'io.jmix.ui:jmix-ui-themes'
     implementation 'io.jmix.ui:jmix-ui-themes'
+    implementation 'org.apache.poi:poi:3.15'
+    implementation 'org.apache.poi:poi-ooxml:3.15'
 }
 
 test {

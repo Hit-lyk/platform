@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://workingInstruction.caption">
-    <layout>
-        <vbox stylename="wi-frame" width="1500">
+    <data>
+        <collection class="com.company.platform.entity.WorkGuidInfo"
+                    id="WorkGuidInfoDc">
+            <fetchPlan extends="_base"/>
+            <loader id="WorkGuidInfoDl">
+                <query>
+                    <![CDATA[select e from WorkGuidInfo e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout expand="page-bottom">
+        <vbox id="top-bar" height="50">
+            <comboBox id="comboFileNo" nullOptionVisible="false"/>
+        </vbox>
+        <vbox id="mainContent" stylename="wi-frame" width="1500">
             <hbox height="105px">
                 <image align="MIDDLE_CENTER" width="260" height="100%" stylename="wi-border-right-bottom">
                     <resource>
@@ -270,5 +284,6 @@
                 </vbox>
             </hbox>
         </vbox>
+        <vbox id="page-bottom"></vbox>
     </layout>
 </window>

@@ -1,28 +1,7 @@
 <window xmlns="http://jmix.io/schema/ui/window"
-        xmlns:chart="http://jmix.io/schema/ui/charts">
-    <data>
-        <collection id="dateValueDc"
-                    class="com.company.platform.entity.GF_POBDetail">
-            <fetchPlan extends="_local"/>
-            <loader id="dateValueLoader">
-                <query>
-                    <![CDATA[select e from sampler_DateValue e order by e.createdDate]]>
-                </query>
-            </loader>
-        </collection>
-    </data>
-    <facets>
-        <dataLoadCoordinator auto="true"/>
-    </facets>
+        xmlns:chart="http://jmix.io/schema/ui/charts"
+        caption="msg://com.company.platform.screen.test/testScreen.caption">
     <layout>
-        作业管理	实现对作业指导书基本信息的增删改查
-        生产管理	实现对工人生产信息的展示和管理，主要包括删除指定信息、批量删除和清空
-        生产页面	模拟工人录入和采集生产相关信息的页面，包括拆解说明
-        拆解物存储	根据不同作业指导书不同拆解物的特点，针对拆解物设计存储方式，包括读取拆解物中转数据的接口以及对应的json格式，包括拆解说明
-        拆解物录入	根据不同作业指导书不同拆解物的特点实现拆解物的动态录入，包括拆解说明
-        数据库设计	根据产线、作业、生产三个功能的具体需求设计和调整数据表和相关接口
-        作业指导书	按现有海尔作业指导书样式进行界面排版，制作作业指导书模板
-        生成作业指导书	根据不同数据源设计数据接口，结合作业指导书模板生成作业指导书
-
+        <fileStorageUpload id="uploadTest" accept="*.xlsx" fileStoragePutMode="MANUAL"/>
     </layout>
 </window>
