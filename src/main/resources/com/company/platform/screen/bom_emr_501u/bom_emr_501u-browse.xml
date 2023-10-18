@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
-        caption="msg://test_senBrowse.caption"
-        focusComponent="test_sensTable">
+        caption="msg://bom_Emr_501uBrowse.caption"
+        focusComponent="bom_Emr_501usTable">
     <data readOnly="true">
-        <collection id="test_sensDc"
-                    class="com.company.platform.entity.Test_sen">
+        <collection id="bom_Emr_501usDc"
+                    class="com.company.platform.entity.Bom_Emr_501u">
             <fetchPlan extends="_base"/>
-            <loader id="test_sensDl">
+            <loader id="bom_Emr_501usDl">
                 <query>
-                    <![CDATA[select e from Test_sen e]]>
+                    <![CDATA[select e from Bom_Emr_501u e]]>
                 </query>
             </loader>
         </collection>
@@ -30,36 +30,42 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="test_sensTable" spacing="true">
+    <layout expand="bom_Emr_501usTable" spacing="true">
         <filter id="filter"
-                dataLoader="test_sensDl">
+                dataLoader="bom_Emr_501usDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="test_sensTable"
+        <groupTable id="bom_Emr_501usTable"
                     width="100%"
-                    dataContainer="test_sensDc">
+                    dataContainer="bom_Emr_501usDc">
             <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
             </actions>
             <columns>
                 <column id="id"/>
-                <column id="sn"/>
-                <column id="record_time"/>
-                <column id="temp"/>
-                <column id="humidity"/>
+                <column id="material_code"/>
+                <column id="item_name"/>
+                <column id="bom_component"/>
+                <column id="component_desc"/>
+                <column id="component_cons_quant"/>
+                <column id="unit"/>
+                <column id="component_price"/>
+                <column id="amount_of_money"/>
+                <column id="proportion"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
+                <button id="createBtn" action="bom_Emr_501usTable.create"/>
+                <button id="editBtn" action="bom_Emr_501usTable.edit"/>
+                <button id="removeBtn" action="bom_Emr_501usTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
         </hbox>
-        <fileUpload id="fileUpload" caption="msg://fileUpload.caption"
-                    clearButtonCaption="msg://fileUpload.clearButtonCaption"
-                    clearButtonIcon="msg://fileUpload.clearButtonIcon"
-                    uploadButtonCaption="msg://fileUpload.uploadButtonCaption"/>
-
     </layout>
 </window>

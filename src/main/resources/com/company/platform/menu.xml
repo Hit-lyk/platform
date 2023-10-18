@@ -2,29 +2,53 @@
 <menu-config xmlns="http://jmix.io/schema/ui/menu">
 
     <menu id="application" caption="msg://com.company.platform/menu.application" insertBefore="administration">
-<!--        <item screen="User.browse" caption="msg://com.company.platform.screen.user/UserBrowse.caption"/>-->
-        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
-        <item screen="GF_POBDetail.browse"
-              caption="msg://com.company.platform.screen.gf_pobdetail/GF_POBDetailBrowse.menu"/>
-        <item screen="GF_POBMain.browse" caption="msg://com.company.platform.screen.gf_pobmain/GF_POBMainBrowse.menu"/>
-        <item screen="ProductDisassemblyProcessDefine.browse"
-              caption="msg://com.company.platform.screen.productdisassemblyprocessdefine/productDisassemblyProcessDefineBrowse.menu"/>
-        <item screen="GraphDemo" caption="msg://com.company.platform.screen.graphdemo/graphDemo.caption"/>
-        <item screen="WorkingInstruction"
-              caption="msg://com.company.platform.screen.workinginstruction/workingInstruction.caption"/>
-        <item screen="PredictionScreen"
-              caption="msg://com.company.platform.screen.prediction/predictionScreen.caption"/>
-        <item screen="WorkGuidInfo.browse"
-              caption="msg://com.company.platform.screen.workguidinfo/workGuidInfoBrowse.menu"/>
-        <item screen="CameraInfo.browse" caption="msg://com.company.platform.screen.camerainfo/cameraInfoBrowse.menu"/>
-        <item screen="SensorInfo.browse" caption="msg://com.company.platform.screen.sensorinfo/sensorInfoBrowse.menu"/>
-        <item screen="ProduceInfo.browse"
-              caption="msg://com.company.platform.screen.produceinfo/produceInfoBrowse.menu"/>
-        <item screen="Test_sen.browse" caption="msg://com.company.platform.screen.test_sen/test_senBrowse.menu"/>
-        <item screen="Disassemble_transfer_details.browse"
-              caption="msg://com.company.platform.screen.disassemble_transfer_details/disassemble_transfer_detailsBrowse.menu"/>
-        <item screen="Product_Inventory.browse"
-              caption="msg://com.company.platform.screen.product_inventory/product_InventoryBrowse.menu"/>
+        <menu id="01" caption="msg:///01">
+            <item screen="WorkGuidInfo.browse"
+                  caption="msg://com.company.platform.screen.workguidinfo/workGuidInfoBrowse.menu"/>
+            <item screen="WorkingInstruction"
+                  caption="msg://com.company.platform.screen.workinginstruction/workingInstruction.caption"/>
+            <item screen="ProductDisassemblyProcessDefine.browse"
+                  caption="msg://com.company.platform.screen.productdisassemblyprocessdefine/productDisassemblyProcessDefineBrowse.menu"/>
+            <item screen="GraphDemo" caption="msg://com.company.platform.screen.graphdemo/graphDemo.caption"/>
+        </menu>
+        <menu id="02" caption="msg://com.company.platform/menu_config.02">
+            <item screen="SensorInfo.browse"
+                  caption="msg://com.company.platform.screen.sensorinfo/sensorInfoBrowse.menu"/>
+            <item screen="CameraInfo.browse"
+                  caption="msg://com.company.platform.screen.camerainfo/cameraInfoBrowse.menu"/>
+            <item screen="Test_sen.browse" caption="msg://com.company.platform.screen.test_sen/test_senBrowse.menu"/>
+        </menu>
+        <menu id="03" caption="msg://com.company.platform/menu_config.03">
+            <menu id="bom" caption="msg://com.company.platform/menu_config.bom">
+                <item screen="Bom_Emr_501u.browse"
+                      caption="msg://com.company.platform.screen.bom_emr_501u/bom_Emr_501uBrowse.menu"/>
+                <item screen="Bom_Emr_120d.browse"
+                      caption="msg://com.company.platform.screen.bom_emr_120d/bom_Emr_120dBrowse.menu"/>
+                <item screen="Bom_Emr_121_220.browse"
+                      caption="msg://com.company.platform.screen.bom_emr_121_220/bom_Emr_121_220Browse.menu"/>
+                <item screen="Bom_Emr_221_500.browse"
+                      caption="msg://com.company.platform.screen.bom_emr_221_500/bom_Emr_221_500Browse.menu"/>
+            </menu>
+            <item screen="Product_Inventory.browse"
+                  caption="msg://com.company.platform.screen.product_inventory/product_InventoryBrowse.menu"/>
+            <item screen="Disassemble_transfer_details.browse"
+                  caption="msg://com.company.platform.screen.disassemble_transfer_details/disassemble_transfer_detailsBrowse.menu"/>
+            <item screen="Mse_Transfer_Records.browse"
+                  caption="msg://com.company.platform.screen.mse_transfer_records/mse_Transfer_RecordsBrowse.menu"/>
+            <item screen="PredictionScreen"
+                  caption="msg://com.company.platform.screen.prediction/predictionScreen.caption"/>
+            <item screen="GF_POBDetail.browse"
+                  caption="msg://com.company.platform.screen.gf_pobdetail/GF_POBDetailBrowse.menu"/>
+            <item screen="GF_POBMain.browse"
+                  caption="msg://com.company.platform.screen.gf_pobmain/GF_POBMainBrowse.menu"/>
+            <item screen="Inventory_barcodes.browse"
+                  caption="msg://com.company.platform.screen.inventory_barcodes/inventory_barcodesBrowse.menu"/>
+        </menu>
+        <menu id="04" caption="msg://com.company.platform/menu_config.04">
+            <item screen="ProduceInfo.browse"
+                  caption="msg://com.company.platform.screen.produceinfo/produceInfoBrowse.menu"/>
+        </menu>
     </menu>
+    <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
     <item screen="TestScreen" caption="msg://com.company.platform.screen.test/testScreen.caption"/>
 </menu-config>

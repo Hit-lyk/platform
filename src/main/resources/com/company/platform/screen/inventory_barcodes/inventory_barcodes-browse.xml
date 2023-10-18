@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://inventory_barcodesBrowse.caption"
+        focusComponent="inventory_barcodesesTable">
+    <data readOnly="true">
+        <collection id="inventory_barcodesesDc"
+                    class="com.company.platform.entity.Inventory_barcodes">
+            <fetchPlan extends="_base"/>
+            <loader id="inventory_barcodesesDl">
+                <query>
+                    <![CDATA[select e from Inventory_barcodes e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="inventory_barcodesesTable" spacing="true">
+        <filter id="filter"
+                dataLoader="inventory_barcodesesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="inventory_barcodesesTable"
+                    width="100%"
+                    dataContainer="inventory_barcodesesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="id"/>
+                <column id="model"/>
+                <column id="good_description"/>
+                <column id="reservoir_area"/>
+                <column id="shelf_code"/>
+                <column id="bin_location"/>
+                <column id="barcode_number"/>
+                <column id="barcode_number1"/>
+                <column id="inventory_age"/>
+                <column id="inventory_age_start"/>
+                <column id="quantity"/>
+                <column id="weight"/>
+                <column id="unit"/>
+                <column id="offline_time"/>
+                <column id="inbound_time"/>
+                <column id="frozen_state"/>
+                <column id="occ_track_num"/>
+                <column id="scan_state"/>
+                <column id="product_order_num"/>
+                <column id="product_line"/>
+                <column id="factory"/>
+                <column id="warehouse"/>
+                <column id="batch_num"/>
+                <column id="product_num"/>
+                <column id="location_usage"/>
+                <column id="create"/>
+                <column id="creation_time"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="inventory_barcodesesTable.create"/>
+                <button id="editBtn" action="inventory_barcodesesTable.edit"/>
+                <button id="removeBtn" action="inventory_barcodesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
-        caption="msg://test_senBrowse.caption"
-        focusComponent="test_sensTable">
+        caption="msg://mse_Transfer_RecordsBrowse.caption"
+        focusComponent="mse_Transfer_RecordsesTable">
     <data readOnly="true">
-        <collection id="test_sensDc"
-                    class="com.company.platform.entity.Test_sen">
+        <collection id="mse_Transfer_RecordsesDc"
+                    class="com.company.platform.entity.Mse_Transfer_Records">
             <fetchPlan extends="_base"/>
-            <loader id="test_sensDl">
+            <loader id="mse_Transfer_RecordsesDl">
                 <query>
-                    <![CDATA[select e from Test_sen e]]>
+                    <![CDATA[select e from Mse_Transfer_Records e]]>
                 </query>
             </loader>
         </collection>
@@ -30,22 +30,32 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="test_sensTable" spacing="true">
+    <layout expand="mse_Transfer_RecordsesTable" spacing="true">
         <filter id="filter"
-                dataLoader="test_sensDl">
+                dataLoader="mse_Transfer_RecordsesDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="test_sensTable"
+        <groupTable id="mse_Transfer_RecordsesTable"
                     width="100%"
-                    dataContainer="test_sensDc">
+                    dataContainer="mse_Transfer_RecordsesDc">
             <actions>
             </actions>
             <columns>
                 <column id="id"/>
-                <column id="sn"/>
-                <column id="record_time"/>
-                <column id="temp"/>
-                <column id="humidity"/>
+                <column id="barcode"/>
+                <column id="production_order_number"/>
+                <column id="factory"/>
+                <column id="quantity"/>
+                <column id="tray"/>
+                <column id="batch_number"/>
+                <column id="offline_time"/>
+                <column id="operator"/>
+                <column id="material_code"/>
+                <column id="material_description"/>
+                <column id="disassembly_line_name"/>
+                <column id="supplier"/>
+                <column id="transmission_time"/>
+                <column id="warehouse_or_not"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
@@ -56,10 +66,5 @@
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
         </hbox>
-        <fileUpload id="fileUpload" caption="msg://fileUpload.caption"
-                    clearButtonCaption="msg://fileUpload.clearButtonCaption"
-                    clearButtonIcon="msg://fileUpload.clearButtonIcon"
-                    uploadButtonCaption="msg://fileUpload.uploadButtonCaption"/>
-
     </layout>
 </window>

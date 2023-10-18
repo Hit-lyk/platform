@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://mse_Transfer_RecordsEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="mse_Transfer_RecordsDc"
+                  class="com.company.platform.entity.Mse_Transfer_Records">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="mse_Transfer_RecordsDc">
+                <column width="350px">
+                    <textField id="idField" property="id"/>
+                    <textField id="barcodeField" property="barcode"/>
+                    <textField id="production_order_numberField" property="production_order_number"/>
+                    <textField id="factoryField" property="factory"/>
+                    <textField id="quantityField" property="quantity"/>
+                    <textField id="trayField" property="tray"/>
+                    <textField id="batch_numberField" property="batch_number"/>
+                    <textField id="offline_timeField" property="offline_time"/>
+                    <textField id="operatorField" property="operator"/>
+                    <textField id="material_codeField" property="material_code"/>
+                    <textField id="material_descriptionField" property="material_description"/>
+                    <textField id="disassembly_line_nameField" property="disassembly_line_name"/>
+                    <textField id="supplierField" property="supplier"/>
+                    <textField id="transmission_timeField" property="transmission_time"/>
+                    <textField id="warehouse_or_notField" property="warehouse_or_not"/>
+                </column>
+            </form>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://inventory_barcodesEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="inventory_barcodesDc"
+                  class="com.company.platform.entity.Inventory_barcodes">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="inventory_barcodesDc">
+                <column width="350px">
+                    <textField id="idField" property="id"/>
+                    <textField id="modelField" property="model"/>
+                    <textField id="good_descriptionField" property="good_description"/>
+                    <textField id="reservoir_areaField" property="reservoir_area"/>
+                    <textField id="shelf_codeField" property="shelf_code"/>
+                    <textField id="bin_locationField" property="bin_location"/>
+                    <textField id="barcode_numberField" property="barcode_number"/>
+                    <textField id="barcode_number1Field" property="barcode_number1"/>
+                    <textField id="inventory_ageField" property="inventory_age"/>
+                    <textField id="inventory_age_startField" property="inventory_age_start"/>
+                    <textField id="quantityField" property="quantity"/>
+                    <textField id="weightField" property="weight"/>
+                    <textField id="unitField" property="unit"/>
+                    <textField id="offline_timeField" property="offline_time"/>
+                    <textField id="inbound_timeField" property="inbound_time"/>
+                    <textField id="frozen_stateField" property="frozen_state"/>
+                    <textField id="occ_track_numField" property="occ_track_num"/>
+                    <textField id="scan_stateField" property="scan_state"/>
+                    <textField id="product_order_numField" property="product_order_num"/>
+                    <textField id="product_lineField" property="product_line"/>
+                    <textField id="factoryField" property="factory"/>
+                    <textField id="warehouseField" property="warehouse"/>
+                    <textField id="batch_numField" property="batch_num"/>
+                    <textField id="product_numField" property="product_num"/>
+                    <textField id="location_usageField" property="location_usage"/>
+                    <textField id="createField" property="create"/>
+                    <textField id="creation_timeField" property="creation_time"/>
+                </column>
+            </form>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

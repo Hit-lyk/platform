@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://bom_Emr_121_220Edit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="bom_Emr_121_220Dc"
+                  class="com.company.platform.entity.Bom_Emr_121_220">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="editActions">
+        <form id="form" dataContainer="bom_Emr_121_220Dc">
+            <column width="350px">
+                <textField id="idField" property="id"/>
+                <textField id="material_codeField" property="material_code"/>
+                <textField id="item_nameField" property="item_name"/>
+                <textField id="bom_componentField" property="bom_component"/>
+                <textField id="component_descField" property="component_desc"/>
+                <textField id="component_cons_quantField" property="component_cons_quant"/>
+                <textField id="unitField" property="unit"/>
+                <textField id="component_priceField" property="component_price"/>
+                <textField id="amount_of_moneyField" property="amount_of_money"/>
+                <textField id="proportionField" property="proportion"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

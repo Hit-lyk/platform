@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
-        caption="msg://test_senBrowse.caption"
-        focusComponent="test_sensTable">
+        caption="msg://bom_Emr_221_500Browse.caption"
+        focusComponent="bom_Emr_221_500sTable">
     <data readOnly="true">
-        <collection id="test_sensDc"
-                    class="com.company.platform.entity.Test_sen">
+        <collection id="bom_Emr_221_500sDc"
+                    class="com.company.platform.entity.Bom_Emr_221_500">
             <fetchPlan extends="_base"/>
-            <loader id="test_sensDl">
+            <loader id="bom_Emr_221_500sDl">
                 <query>
-                    <![CDATA[select e from Test_sen e]]>
+                    <![CDATA[select e from Bom_Emr_221_500 e]]>
                 </query>
             </loader>
         </collection>
@@ -30,22 +30,27 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="test_sensTable" spacing="true">
+    <layout expand="bom_Emr_221_500sTable" spacing="true">
         <filter id="filter"
-                dataLoader="test_sensDl">
+                dataLoader="bom_Emr_221_500sDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="test_sensTable"
+        <groupTable id="bom_Emr_221_500sTable"
                     width="100%"
-                    dataContainer="test_sensDc">
+                    dataContainer="bom_Emr_221_500sDc">
             <actions>
             </actions>
             <columns>
                 <column id="id"/>
-                <column id="sn"/>
-                <column id="record_time"/>
-                <column id="temp"/>
-                <column id="humidity"/>
+                <column id="material_code"/>
+                <column id="item_name"/>
+                <column id="bom_component"/>
+                <column id="component_desc"/>
+                <column id="component_cons_quant"/>
+                <column id="unit"/>
+                <column id="component_price"/>
+                <column id="amount_of_money"/>
+                <column id="proportion"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
@@ -56,10 +61,5 @@
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
         </hbox>
-        <fileUpload id="fileUpload" caption="msg://fileUpload.caption"
-                    clearButtonCaption="msg://fileUpload.clearButtonCaption"
-                    clearButtonIcon="msg://fileUpload.clearButtonIcon"
-                    uploadButtonCaption="msg://fileUpload.uploadButtonCaption"/>
-
     </layout>
 </window>

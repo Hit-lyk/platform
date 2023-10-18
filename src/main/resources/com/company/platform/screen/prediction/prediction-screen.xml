@@ -2,11 +2,11 @@
         xmlns:chart="http://jmix.io/schema/ui/charts">
     <data>
         <collection id="dateValueDc"
-                    class="com.company.platform.entity.GF_POBDetail">
+                    class="com.company.platform.entity.Test_sen">
             <fetchPlan extends="_local"/>
             <loader id="dateValueLoader">
                 <query>
-                    <![CDATA[select e from GF_POBDetail e order by e.createdDate]]>
+                    <![CDATA[select e from Test_sen e order by e.record_time]]>
                 </query>
             </loader>
         </collection>
@@ -18,7 +18,7 @@
         <hbox width="100%" height="100%" >
             <chart:serialChart id="lineChart"
                                autoMarginOffset="20"
-                               categoryField="createdDate"
+                               categoryField="record_time"
                                dataContainer="dateValueDc"
                                height="100%"
                                marginRight="40"
@@ -44,7 +44,7 @@
                                  lineThickness="2"
                                  title="Red line"
                                  useLineColorForBulletBorder="true"
-                                 valueField="proNum"
+                                 valueField="temp"
                                  balloonText="&lt;span style='font-size:18px;'&gt;[[value]]&lt;/span&gt;">
                         <chart:balloon adjustBorderColor="false"
                                        color="WHITE"
@@ -82,7 +82,7 @@
             </chart:serialChart>
             <chart:serialChart id="lineChart1"
                                autoMarginOffset="20"
-                               categoryField="createdDate"
+                               categoryField="record_time"
                                dataContainer="dateValueDc"
                                height="100%"
                                marginRight="40"
@@ -108,7 +108,7 @@
                                  lineThickness="2"
                                  title="Red line"
                                  useLineColorForBulletBorder="true"
-                                 valueField="proNum"
+                                 valueField="humidity"
                                  balloonText="&lt;span style='font-size:18px;'&gt;[[value]]&lt;/span&gt;">
                         <chart:balloon adjustBorderColor="false"
                                        color="WHITE"
