@@ -1,7 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:chart="http://jmix.io/schema/ui/charts"
         caption="msg://com.company.platform.screen.test/testScreen.caption">
+<!--    <data>-->
+<!--        <collection class="com.company.platform.entity.Workstation_management"-->
+<!--                    id="WorkstationDc">-->
+<!--            <fetchPlan extends="_base"/>-->
+<!--            <loader id="WorkstationDl">-->
+<!--                <query>-->
+<!--                    <![CDATA[select e from Workstation_management e]]>-->
+<!--                </query>-->
+<!--            </loader>-->
+<!--        </collection>-->
+<!--    </data>-->
+
     <layout>
+        <comboBox id="workstationComboBox"/>
         <fileStorageUpload id="uploadTest" accept="*.xlsx" fileStoragePutMode="MANUAL"/>
     </layout>
 </window>

@@ -2,6 +2,9 @@ package com.company.platform.screen.test;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.company.platform.entity.Test_sen;
+import io.jmix.core.DataManager;
+import io.jmix.ui.component.ComboBox;
 import io.jmix.ui.component.FileStorageUploadField;
 import io.jmix.ui.component.SingleFileUploadField;
 import io.jmix.ui.component.UploadField;
@@ -10,13 +13,21 @@ import io.jmix.ui.screen.Subscribe;
 import io.jmix.ui.screen.UiController;
 import io.jmix.ui.screen.UiDescriptor;
 import io.jmix.ui.upload.TemporaryStorage;
+import io.jmix.ui.widget.JmixComboBox;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.*;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.UUID;
+
+import java.sql.Connection;
+import java.sql.*;
+import java.util.UUID;
+
 
 @UiController("TestScreen")
 @UiDescriptor("Test-screen.xml")
@@ -25,12 +36,21 @@ public class TestScreen extends Screen {
     private FileStorageUploadField uploadTest;
     @Autowired
     private TemporaryStorage temporaryStorage;
+    @Autowired
+    private DataManager dataManager;
+//    @Autowired
+//    private ComboBox<Integer> comboFileNo;
 
     @Subscribe("uploadTest")
     public void onUploadTestFileUploadSucceed(final SingleFileUploadField.FileUploadSucceedEvent event) {
         UUID id = uploadTest.getFileId();
         File file = temporaryStorage.getFile(uploadTest.getFileId());
-
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hitplatform", "root", "123456");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         try {
             InputStream inputStream = new FileInputStream(file);
             Workbook workBook = new XSSFWorkbook(inputStream);
@@ -40,26 +60,41 @@ public class TestScreen extends Screen {
             for(int i=1; i<rownum; i++)//第一行为标题
             {
                 Row row = sheet0.getRow(i);
-                Cell cell = row.getCell(0);
-                String strSAttributes = (String) getCellFormatValue(row.getCell(1));
-                String[] strAttributes = strSAttributes.split(";");
-                JSONArray jsonAttributes = new JSONArray();
-                for(int j=0; j<strAttributes.length; j++){
-                    String[] strTemp=strAttributes[j].split(":");
-                    JSONObject jsonAttribute = new JSONObject();
-                    if(strTemp.length!=2)
-                        continue;
 
-                    jsonAttribute.put("keyName", strTemp[0]);
-                    jsonAttribute.put("keyValue", strTemp[1]);
+//                Cell cell = row.getCell(0);
+                Test_sen testEnity = new Test_sen();
+                DataFormatter formatter = new DataFormatter();
 
-                    jsonAttributes.add(jsonAttribute);
-                }
+                Cell cellSn = row.getCell(1);
+                Cell cellHumidity = row.getCell(4);
+                Cell cellTemp = row.getCell(3);
+                Cell cellRecord_time = row.getCell(2);
+                String cellStrSn = formatter.formatCellValue(cellSn);
+                String cellStrRT = formatter.formatCellValue(cellRecord_time);
+                testEnity.setId(UUID.randomUUID().toString());
+                testEnity.setHumidity((float)cellHumidity.getNumericCellValue());
+                testEnity.setSn(cellStrSn);
+                testEnity.setTemp((float)cellTemp.getNumericCellValue());
+                testEnity.setRecord_time(cellStrRT);
+                dataManager.save(testEnity);
             }
+
         }catch (IOException e){
             e.printStackTrace();
         }
+        try {
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
     }
+
+
+
     public Object getCellFormatValue(Cell cell){
         Object cellValue = null;
         if(cell!=null){

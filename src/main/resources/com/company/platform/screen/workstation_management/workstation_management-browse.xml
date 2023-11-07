@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
-        caption="msg://test_senBrowse.caption"
-        focusComponent="test_sensTable">
+        caption="msg://workstation_managementBrowse.caption"
+        focusComponent="workstation_managementsTable">
     <data readOnly="true">
-        <collection id="test_sensDc"
-                    class="com.company.platform.entity.Test_sen">
+        <collection id="workstation_managementsDc"
+                    class="com.company.platform.entity.Workstation_management">
             <fetchPlan extends="_base"/>
-            <loader id="test_sensDl">
+            <loader id="workstation_managementsDl">
                 <query>
-                    <![CDATA[select e from Test_sen e]]>
+                    <![CDATA[select e from Workstation_management e]]>
                 </query>
             </loader>
         </collection>
@@ -30,33 +30,34 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="test_sensTable" spacing="true">
+    <layout expand="workstation_managementsTable" spacing="true">
         <filter id="filter"
-                dataLoader="test_sensDl">
+                dataLoader="workstation_managementsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="test_sensTable"
+        <groupTable id="workstation_managementsTable"
                     width="100%"
-                    dataContainer="test_sensDc">
+                    dataContainer="workstation_managementsDc">
             <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="id"/>
-                <column id="sn"/>
-                <column id="record_time"/>
-                <column id="temp"/>
-                <column id="humidity"/>
+                <column id="product_line"/>
+                <column id="station"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
+                <button id="createBtn" action="workstation_managementsTable.create"/>
+                <button id="editBtn" action="workstation_managementsTable.edit"/>
+                <button id="removeBtn" action="workstation_managementsTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
         </hbox>
-        <fileStorageUpload id="uploadTest" accept="*.xlsx" fileStoragePutMode="MANUAL"/>
-
     </layout>
 </window>
