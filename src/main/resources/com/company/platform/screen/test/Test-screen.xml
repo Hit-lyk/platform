@@ -2,20 +2,16 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:chart="http://jmix.io/schema/ui/charts"
         caption="msg://com.company.platform.screen.test/testScreen.caption">
-<!--    <data>-->
-<!--        <collection class="com.company.platform.entity.Workstation_management"-->
-<!--                    id="WorkstationDc">-->
-<!--            <fetchPlan extends="_base"/>-->
-<!--            <loader id="WorkstationDl">-->
-<!--                <query>-->
-<!--                    <![CDATA[select e from Workstation_management e]]>-->
-<!--                </query>-->
-<!--            </loader>-->
-<!--        </collection>-->
-<!--    </data>-->
 
     <layout>
-        <comboBox id="workstationComboBox"/>
-        <fileStorageUpload id="uploadTest" accept="*.xlsx" fileStoragePutMode="MANUAL"/>
+        <vbox>
+            <textField id="pythonCmd" caption="Python&#21629;&#20196;&#23383;"/>
+            <vbox height="10px"></vbox>
+            <fileStorageUpload id="uploadTest" accept="*.py" fileStoragePutMode="MANUAL"
+                               caption="&#25191;&#34892;python&#25991;&#20214;"/>
+            <vbox height="10px"></vbox>
+            <label value="&#25191;&#34892;&#32467;&#26524;"/>
+            <label id="lblResult"/>
+        </vbox>
     </layout>
 </window>
