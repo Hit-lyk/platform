@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
-        caption="msg://product_InventoryBrowse.caption"
-        focusComponent="product_InventoriesTable">
+        caption="msg://workstation_tablesBrowse.caption"
+        focusComponent="workstation_tablesesTable">
     <data readOnly="true">
-        <collection id="product_InventoriesDc"
-                    class="com.company.platform.entity.Product_Inventory">
+        <collection id="workstation_tablesesDc"
+                    class="com.company.platform.entity.Workstation_tables">
             <fetchPlan extends="_base"/>
-            <loader id="product_InventoriesDl">
+            <loader id="workstation_tablesesDl">
                 <query>
-                    <![CDATA[select e from Product_Inventory e]]>
+                    <![CDATA[select e from Workstation_tables e]]>
                 </query>
             </loader>
         </collection>
@@ -30,43 +30,35 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="product_InventoriesTable" spacing="true">
+    <layout expand="workstation_tablesesTable" spacing="true">
         <filter id="filter"
-                dataLoader="product_InventoriesDl">
+                dataLoader="workstation_tablesesDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="product_InventoriesTable"
+        <groupTable id="workstation_tablesesTable"
                     width="100%"
-                    dataContainer="product_InventoriesDc">
+                    dataContainer="workstation_tablesesDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="id"/>
-                <column id="item_code"/>
-                <column id="item_name"/>
-                <column id="warehouse"/>
-                <column id="reservoir_area"/>
-                <column id="shelf_code"/>
-                <column id="bin_locaton"/>
-                <column id="quantity"/>
-                <column id="unit"/>
-                <column id="factory"/>
+                <column id="electrical_appliances"/>
+                <column id="appliance_model"/>
+                <column id="process"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="product_InventoriesTable.create"/>
-                <button id="editBtn" action="product_InventoriesTable.edit"/>
-                <button id="removeBtn" action="product_InventoriesTable.remove"/>
+                <button id="createBtn" action="workstation_tablesesTable.create"/>
+                <button id="editBtn" action="workstation_tablesesTable.edit"/>
+                <button id="removeBtn" action="workstation_tablesesTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
         </hbox>
-        <fileStorageUpload id="upload_Test" accept="*.xlsx" fileStoragePutMode="MANUAL"/>
     </layout>
 </window>

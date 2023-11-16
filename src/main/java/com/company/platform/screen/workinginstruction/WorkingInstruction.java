@@ -1,8 +1,11 @@
 package com.company.platform.screen.workinginstruction;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.company.platform.entity.ProduceInfo;
 import com.company.platform.entity.StationType;
 import com.company.platform.entity.WorkGuidInfo;
+import com.company.platform.entity.Workstation_tables;
 import com.company.platform.state.GraphState;
 import io.jmix.core.DataManager;
 import io.jmix.ui.component.ComboBox;
@@ -10,6 +13,7 @@ import io.jmix.ui.component.HasValue;
 import io.jmix.ui.component.Label;
 import io.jmix.ui.screen.*;
 import io.jmix.ui.widget.JmixComboBox;
+import liquibase.pro.packaged.I;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.*;
@@ -43,22 +47,26 @@ public class WorkingInstruction extends Screen {
     private ComboBox<Integer> comboFileNo1;
 
 
+    private List<Workstation_tables> listInfo1;
     private List<WorkGuidInfo> listInfo;
     Map<String, Integer> itemList = new HashMap<String, Integer>();
 
-//    public void onInit(InitEvent event) {
-//        comboFileNo1.setItem(new ArrayList<>(Arrays.asList(1,2,3,4,5)));
-//    }
-
     @Subscribe
     protected void onInit(InitEvent event) {
-        listInfo = dataManager.load(WorkGuidInfo.class).all().list();
-        for(int i=0; i<listInfo.size(); i++){
-            WorkGuidInfo infoWorkGuid = listInfo.get(i);
-            itemList.put(infoWorkGuid.getFileNo(), i);
+        listInfo1 = dataManager.load(Workstation_tables.class).all().list();
+        for(int i=0; i<listInfo1.size(); i++){
+            Workstation_tables infoWorkstation = listInfo1.get(i);
+            itemList.put(infoWorkstation.getAppliance_model()+"--"+infoWorkstation.getElectrical_appliances(), i);
         }
+        comboFileNo1.setOptionsMap(itemList);
+//        listInfo = dataManager.load(WorkGuidInfo.class).all().list();
+//        for(int i=0; i<listInfo.size(); i++){
+//            WorkGuidInfo infoWorkGuid = listInfo.get(i);
+//            itemList.put(infoWorkGuid.getFileNo(), i);
+//        }
 
-        comboFileNo2.setOptionsMap(itemList);
+//        comboFileNo1.setOptionsMap(itemList);
+
         typeContent.setValue("\u2002\u2002\u2002EMR冰柜\n（不含氟利昂）");
         contentSGAQXZ.setValue("1.戴好防护用具（安全帽，口罩，胶皮手套，护目镜，耳塞，三防鞋，围裙，套袖）\n2.检查安全通道是否畅通，是否有应急措施和物品。");
         contentBQZB.setValue("机：检查设备是否完好\n" +
@@ -104,5 +112,18 @@ public class WorkingInstruction extends Screen {
         contentLQSCWT.setValue(infoWorkGuid.getMinefield());
         contentCLHG.setValue(infoWorkGuid.getAfter_mine());
         contentGZQJ.setValue(infoWorkGuid.getDevice_tools());
+    }
+
+    @Subscribe("comboFileNo1")
+    public void onComboFileNo2ValueChange(final HasValue.ValueChangeEvent event) {
+        Integer itemIndex = event.getValue().hashCode();
+        Workstation_tables infoWorkstation = listInfo1.get(itemIndex);
+        Map<String, Integer> itemList2 = new HashMap<String, Integer>();
+
+        JSONArray jsonItems = JSON.parseArray(infoWorkstation.getProcess());
+        for(int i=0; i<jsonItems.size(); i++){
+            itemList2.put(jsonItems.get(i).toString(), i);
+        }
+        comboFileNo2.setOptionsMap(itemList2);
     }
 }

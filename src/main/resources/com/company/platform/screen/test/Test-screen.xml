@@ -13,5 +13,6 @@
             <label value="&#25191;&#34892;&#32467;&#26524;"/>
             <label id="lblResult"/>
         </vbox>
+
     </layout>
 </window>

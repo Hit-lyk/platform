@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
-        caption="msg://product_InventoryEdit.caption"
+        caption="msg://workstation_tablesEdit.caption"
         focusComponent="form">
     <data>
-        <instance id="product_InventoryDc"
-                  class="com.company.platform.entity.Product_Inventory">
+        <instance id="workstation_tablesDc"
+                  class="com.company.platform.entity.Workstation_tables">
             <fetchPlan extends="_base"/>
             <loader/>
         </instance>
@@ -25,24 +25,16 @@
     <dialogMode height="600"
                 width="800"/>
     <layout spacing="true" expand="editActions">
-        <form id="form" dataContainer="product_InventoryDc">
+        <form id="form" dataContainer="workstation_tablesDc">
             <column width="350px">
-                <textField id="idField" property="id"/>
-                <textField id="item_codeField" property="item_code"/>
-                <textField id="item_nameField" property="item_name"/>
-                <textField id="warehouseField" property="warehouse"/>
-                <textField id="reservoir_areaField" property="reservoir_area"/>
-                <textField id="shelf_codeField" property="shelf_code"/>
-                <textField id="bin_locatonField" property="bin_locaton"/>
-                <textField id="quantityField" property="quantity"/>
-                <textField id="unitField" property="unit"/>
-                <textField id="factoryField" property="factory"/>
+                <textField id="electrical_appliancesField" property="electrical_appliances"/>
+                <textField id="appliance_modelField" property="appliance_model"/>
+                <textArea id="processField" property="process" rows="5"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
             <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
             <button id="closeBtn" action="windowClose"/>
         </hbox>
-        <fileStorageUpload id="upload_Test" accept="*.xlsx" fileStoragePutMode="MANUAL"/>
     </layout>
 </window>

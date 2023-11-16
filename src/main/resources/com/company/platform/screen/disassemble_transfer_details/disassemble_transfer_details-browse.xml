@@ -68,5 +68,6 @@
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
         </hbox>
+        <fileStorageUpload id="upload_Test" accept="*.xlsx" fileStoragePutMode="MANUAL"/>
     </layout>
 </window>

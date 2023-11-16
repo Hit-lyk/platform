@@ -18,8 +18,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
+import java.util.Date;
 import java.util.UUID;
-
+import java.text.SimpleDateFormat;
 
 @UiController("Test_sen.browse")
 @UiDescriptor("test_sen-browse.xml")
@@ -50,12 +51,14 @@ public class Test_senBrowse extends StandardLookup<Test_sen> {
                 Test_sen testEnity = new Test_sen();
                 DataFormatter formatter = new DataFormatter();
 
-                Cell cellSn = row.getCell(1);
-                Cell cellHumidity = row.getCell(4);
-                Cell cellTemp = row.getCell(3);
-                Cell cellRecord_time = row.getCell(2);
+                Cell cellSn = row.getCell(0);
+                Cell cellHumidity = row.getCell(3);
+                Cell cellTemp = row.getCell(2);
+                Cell cellRecord_time = row.getCell(1);
                 String cellStrSn = formatter.formatCellValue(cellSn);
                 String cellStrRT = formatter.formatCellValue(cellRecord_time);
+//                SimpleDateFormat formatte = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//                String cellStrRT = formatte.format(cellRecord_time);
                 testEnity.setId(UUID.randomUUID().toString());
                 testEnity.setHumidity((float)cellHumidity.getNumericCellValue());
                 testEnity.setSn(cellStrSn);
