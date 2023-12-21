@@ -3,8 +3,6 @@
 
     <menu id="application" caption="msg://com.company.platform/menu.application" insertBefore="administration">
         <menu id="01" caption="msg:///01">
-            <item screen="WorkGuidInfo.browse"
-                  caption="msg://com.company.platform.screen.workguidinfo/workGuidInfoBrowse.menu"/>
             <item screen="WorkingInstruction"
                   caption="msg://com.company.platform.screen.workinginstruction/workingInstruction.caption"/>
             <item screen="ProductDisassemblyProcessDefine.browse"
@@ -17,6 +15,10 @@
             <item screen="CameraInfo.browse"
                   caption="msg://com.company.platform.screen.camerainfo/cameraInfoBrowse.menu"/>
             <item screen="Test_sen.browse" caption="msg://com.company.platform.screen.test_sen/test_senBrowse.menu"/>
+            <item screen="Sensor_t4_1.browse"
+                  caption="msg://com.company.platform.screen.sensor_t4_1/sensor_t4_1Browse.menu"/>
+            <item screen="Camera_Task2.browse"
+                  caption="msg://com.company.platform.screen.camera_task2/camera_Task2Browse.menu"/>
         </menu>
         <menu id="03" caption="msg://com.company.platform/menu_config.03">
             <menu id="bom" caption="msg://com.company.platform/menu_config.bom">
@@ -52,6 +54,8 @@
               caption="msg://com.company.platform.screen.workstation_management/workstation_managementBrowse.menu"/>
         <item screen="Workstation_tables.browse"
               caption="msg://com.company.platform.screen.workstation_tables/workstation_tablesBrowse.menu"/>
+        <item screen="WorkGuidInfo.browse"
+              caption="msg://com.company.platform.screen.workguidinfo/workGuidInfoBrowse.menu"/>
     </menu>
     <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
     <item screen="TestScreen" caption="msg://com.company.platform.screen.test/testScreen.caption"/>

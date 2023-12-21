@@ -53,7 +53,8 @@
                     <label align="MIDDLE_CENTER" value="&#20135;&#21697;&#21697;&#31867;"/>
                 </hbox>
                 <hbox width="100" stylename="wi-border-right-bottom" height="100%">
-                    <label align="MIDDLE_CENTER" value="&#20912;&#26588;"/>
+                    <label align="MIDDLE_CENTER" value="&#20912;&#26588;"
+                           id="product_category"/>
                 </hbox>
                 <hbox width="200" stylename="wi-border-right-bottom" height="100%">
                     <label align="MIDDLE_CENTER" value="&#22411;&#21495;"/>
@@ -66,19 +67,22 @@
                     <label align="MIDDLE_CENTER" value="&#19978;&#24037;&#20301;&#21517;&#31216;"/>
                 </hbox>
                 <hbox width="120px" stylename="wi-border-right-bottom" height="100%">
-                    <label align="MIDDLE_CENTER" value="&#26080;"/>
+                    <label align="MIDDLE_CENTER" value="&#26080;"
+                           id="up_station"/>
                 </hbox>
                 <hbox width="130px" stylename="wi-border-right-bottom" height="100%">
                     <label align="MIDDLE_CENTER" value="&#26412;&#24037;&#20301;&#21517;&#31216;"/>
                 </hbox>
                 <hbox width="120px" stylename="wi-border-right-bottom" height="100%">
-                    <label align="MIDDLE_CENTER" value="&#19978;&#26009;"/>
+                    <label align="MIDDLE_CENTER" value="&#19978;&#26009;"
+                           id="current_station"/>
                 </hbox>
                 <hbox width="118" stylename="wi-border-right-bottom" height="100%">
                     <label align="MIDDLE_CENTER" value="&#19979;&#24037;&#20301;&#21517;&#31216;"/>
                 </hbox>
                 <hbox width="120" stylename="wi-border-bottom" height="100%">
-                    <label align="MIDDLE_CENTER" value="&#39044;&#25286;&#35299;1"/>
+                    <label align="MIDDLE_CENTER" value="&#39044;&#25286;&#35299;1"
+                           id="down_station"/>
                 </hbox>
             </hbox>
             <hbox>

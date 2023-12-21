@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
-        caption="msg://workGuidInfoEdit.caption"
+        caption="msg://camera_Task2Edit.caption"
         focusComponent="form">
     <data>
-        <instance id="workGuidInfoDc"
-                  class="com.company.platform.entity.WorkGuidInfo">
+        <instance id="camera_Task2Dc"
+                  class="com.company.platform.entity.Camera_Task2">
             <fetchPlan extends="_base"/>
             <loader/>
         </instance>
@@ -25,18 +25,11 @@
     <dialogMode height="600"
                 width="800"/>
     <layout spacing="true" expand="editActions">
-        <form id="form" dataContainer="workGuidInfoDc">
+        <form id="form" dataContainer="camera_Task2Dc">
             <column width="350px">
-                <textField id="electrical_appliancesField" property="electrical_appliances"/>
-                <textField id="appliance_modelField" property="appliance_model"/>
-                <textField id="fileNoField" property="fileNo"/>
-                <textField id="work_safetyField" property="work_safety"/>
-                <textField id="before_workField" property="before_work"/>
-                <textField id="after_workField" property="after_work"/>
-                <textArea id="step_stdField" property="step_std" rows="5"/>
-                <textField id="minefieldField" property="minefield"/>
-                <textField id="after_mineField" property="after_mine"/>
-                <textField id="device_toolsField" property="device_tools"/>
+                <textField id="deciveField" property="decive"/>
+                <textField id="video_pathField" property="video_path"/>
+                <textField id="locationField" property="location"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

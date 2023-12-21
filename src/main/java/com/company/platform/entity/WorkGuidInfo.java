@@ -5,6 +5,7 @@ import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 @JmixEntity
@@ -15,6 +16,14 @@ public class WorkGuidInfo {
     @Column(name = "ID", nullable = false)
     @Id
     private UUID id;
+
+    @Column(name = "ELECTRICAL_APPLIANCES", nullable = false)
+    @NotNull
+    private String electrical_appliances;
+
+    @Column(name = "APPLIANCE_MODEL", nullable = false)
+    @NotNull
+    private String appliance_model;
 
     @InstanceName
     @Column(name = "FILE_NO")
@@ -41,6 +50,22 @@ public class WorkGuidInfo {
 
     @Column(name = "DEVICE_TOOLS")
     private String device_tools;
+
+    public String getAppliance_model() {
+        return appliance_model;
+    }
+
+    public void setAppliance_model(String appliance_model) {
+        this.appliance_model = appliance_model;
+    }
+
+    public String getElectrical_appliances() {
+        return electrical_appliances;
+    }
+
+    public void setElectrical_appliances(String electrical_appliances) {
+        this.electrical_appliances = electrical_appliances;
+    }
 
     public String getFileNo() {
         return fileNo;
